@@ -97,7 +97,7 @@ grant_type=password&username=john@company.com&password=P@ssw0rd
 </aside>
 
 <aside class="warning">
-400 Badrequest {"error":"invalid_grant","error_description":"The user name or password is incorrect."}
+400 Badrequest { validation related errors }
 </aside>
 
 ## Logout
@@ -373,8 +373,8 @@ name | **required** <i>- 4 to 25 characters long</i> <br> name of the account co
 code | **required** <i>- 1 to 10 characters long</i> <br> code associated with the account code 
 description | **optional** <i>- 5 to 25 characters long</i> <br> a short piece of string to describe the account code 
 taxrateid | **required** <br> tax rate to be associated with this account code
-isarchived | **optional** ***- boolean*** <i>, false by default</i> <br> true if this account code is to be as archived
-isdefault | **optional** ***- boolean*** <i>, false by default</i> <br> true if this account code is to be set as default
+isarchived | **optional** ***- boolean***<i>, false by default</i> <br> true if this account code is to be as archived
+isdefault | **optional** ***- boolean***<i>, false by default</i> <br> true if this account code is to be set as default
 
 ### TAX RATE PARAMETERS
 
@@ -382,8 +382,8 @@ Parameter | Description
 -------------- | --------------
 description | **required** <i>- 5 to 25 characters long</i> <br> a short piece of string to describe the tax rate
 value | **required** ***- decimal*** <br> value of tax to be applied
-isarchived | **optional** ***- boolean*** <i>, false by default</i> <br> true if this tax rate is to be as archived
-isdefault |  **optional** ***- boolean*** <i>, false by default</i> <br> true if this tax rate is to be set as default
+isarchived | **optional** ***- boolean***<i>, false by default</i> <br> true if this tax rate is to be as archived
+isdefault |  **optional** ***- boolean***<i>, false by default</i> <br> true if this tax rate is to be set as default
 
 ### ACCOUNT DETAILS PARAMETERS
 
@@ -443,7 +443,7 @@ notificationlist | **optional** <br> model for list of notification related pref
 Parameter | Description
 -------------- | --------------
 description | **optional** <br> short line of text to describe this notification
-action | **opttional** <br> action to identify related notification <br><br> ***supported input:*** NewQuote, TeamMemberDiscussion, ClientDiscussion, Expiry, AcceptanceAck, AcceptedNotify, AcceptedOnBehalfAck, Declined, SMSBounce, EmailBounce, NewTeamMember
+action | **opttional** <br> action to identify related notification <br><br> ***supported values:*** NewQuote, TeamMemberDiscussion, ClientDiscussion, Expiry, AcceptanceAck, AcceptedNotify, AcceptedOnBehalfAck, Declined, SMSBounce, EmailBounce, NewTeamMember
 sendemail | **optional** <i>- default false, set true if need an email to notify </i> <br> indicates if the notification will be sent as an email
 sendsms | **optional** <i>- default false, set true if need a sms to notify </i> <br> indicates if the notification will be sent as a sms
 inapp | **optional** <i>- default true, set false if in app notification not required </i> <br> indicates if the notification will be shown within Quotebox to the user
@@ -530,7 +530,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 Parameter | Description
 -------------- | --------------
-accountsettings | **optional** <i>- minimum 1 item is required </i> <br> list of enum of account settings <br><br> ***supported input:*** QuoteApperance, QuoteDefaults, AccountCodes, TaxRates, EmailNotifications, EmailSetup, AccountBilling, PaymentInfo, InvoiceHistory, NotificationSettings, AccountDetails 
+accountsettings | **optional** <i>- minimum 1 item is required </i> <br> list of enum of account settings <br><br> ***supported values:*** QuoteApperance, QuoteDefaults, AccountCodes, TaxRates, EmailNotifications, EmailSetup, AccountBilling, PaymentInfo, InvoiceHistory, NotificationSettings, AccountDetails 
 invoicelistpageno | **optional** <br>  page number of invoice to get, pass 0 if none | 0 | integer |
 
 ### HTTP RESPONSE

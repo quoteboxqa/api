@@ -35,7 +35,7 @@ Parameter | Description
 -------------- | --------------
 tagtoapply | **optional** <i>- 3 to 50 characters long </i> <br> title of note item
 tagtodelete | **optional** <i>- 3 to 250 characters long </i> <br> description of note item 
-tagtype | **required** <br> tag associated with <br> ***supported input*** - lineitem, noteitem, template, recipient, recipientcompany, attachment
+tagtype | **required** <br> tag associated with <br> ***supported values*** - lineitem, noteitem, template, recipient, recipientcompany, attachment
 itemid | **optional** <i>- 4 to 25 characters long </i> <br> name of group to which the note item belongs to
 
 ### HTTP Response

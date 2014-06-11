@@ -180,7 +180,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 Parameter | Description
 -------------- | --------------
-quoteaction | **required** <br> action to indicate if the quote was accepted or rejected <br><br> ***supported inputs:*** accepted, declined
+quoteaction | **required** <br> action to indicate if the quote was accepted or rejected <br><br> ***supported values:*** accepted, declined
 key | **required** <br> key to authenticate the client and the associated quote to perfom the action (available from link sent to recipient as an email)
 quoteresponse | **required** <br> model for metadata required to process the request
 

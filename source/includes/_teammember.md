@@ -34,7 +34,7 @@ firstname | **required** <i>- 3 to 25 characters long</i> <br> first name of the
 lastname | **required** <i>- 3 to 25 characters long</i> <br> last name of the user
 email | **required** <i>- 10 to 65 characters long</i> <br> email of the user
 phonenumber | **optional** <i>- only digits allowed </i> <br> phone number of the user
-isadmin | **optional** ***- boolean*** <i>, false by default </i> <br> true if the intended user is an administrator for the associated account
+isadmin | **optional** ***- boolean***<i>, false by default </i> <br> true if the intended user is an administrator for the associated account
 accountname | **optional** <br> name of the account to invite the user in Quotebox
 
 ### HTTP RESPONSE
@@ -313,7 +313,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 Parameter | Description
 -------------- | --------------
 teammemberid | **required** <br> id of team member to update
-isadmin | **optional** ***- boolean*** <i>, false by default </i> <br> true if the intended user is an administrator for the associated account
+isadmin | **optional** ***- boolean***<i>, false by default </i> <br> true if the intended user is an administrator for the associated account
 alternateemail | **optional** <br> alternate email of team member
 
 ### HTTP RESPONSE
