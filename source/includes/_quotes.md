@@ -835,7 +835,7 @@ duration | **optional** ***- integer*** <i>, in miliseconds </i> <br> duration o
 400 Badrequest - { validation related errors }
 </aside>
 
-## Quote action
+## Quote (Action)	
 
 This endpoint will update the quote meta data as per the action taken on the quote either by the user and/or the client(recipient) of the quote.
 
