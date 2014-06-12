@@ -311,7 +311,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 Parameter | Description
 -------------- | --------------
-id | **required** <br> id of the document to get view session
+id | **required** <br> UUID of document attachment
 
 <aside class="success">
 200 Ok
