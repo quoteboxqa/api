@@ -285,3 +285,38 @@ DeleteFromLibrary | **optional** ***- boolean*** <i>, default false, true if wan
 ## Get document view session id
 
 This endpoint will get session id associated for a document attachment type associated with an account.
+
+> The request should return the following JSON
+
+```shell
+
+# HTTP RESPONSE OBJECT
+
+{
+	"SessionId":"73a0c0ee20ab49d48934c6fe688012b6",
+	"Errors":[]
+}
+
+```
+
+### HTTP Request
+
+`GET api/Attachment/GetDocument?id=5396b4d423aea51f4cbdabbc`
+
+<aside class="notice">
+Include bearer token in header to authorize: `Authorization: Bearer token_value`
+</aside>
+
+### HTTP REQUEST BODY
+
+Parameter | Description
+-------------- | --------------
+id | **required** <br> id of the document to get view session
+
+<aside class="success">
+200 Ok
+</aside>
+
+<aside class="warning">
+400 Badrequest - { validation related errors }
+</aside>
