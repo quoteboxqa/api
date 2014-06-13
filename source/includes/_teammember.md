@@ -2,7 +2,9 @@
 
 ## Invite team member
 
-This endpoint will send an invitation to join Quotebox.
+This endpoint will send an invitation via email to join Quotebox.
+
+This endpoint simulates a scenario when a user wants to invite another user to his/her account on Quotebox.
 
 ```shell
 # HTTP REQUEST BODY
@@ -51,12 +53,32 @@ accountname | **optional** <br> name of the account to invite the user in Quoteb
 
 This endpoint will get the details of a invited team member.
 
+This endpoint simulates as scenario when a user wants to get details 
+
 ```shell
 # HTTP REQUEST BODY
 
 {
 	"invitekey":"2270912302132140681661241340940041440111312381670 ... "
 }
+```
+
+> The above request should return the following JSON
+
+```shell
+
+{
+	"TeamMemberId":"539ac7b523aea51bbc10dcbf",
+	"Email":"jhon@papa.com",
+	"PhoneNumber":null,
+	"FirstName":"Test",
+	"LastName":"Sample",
+	"UserType":true,
+	"AccountName":"",
+	"AccountId":"539ac73523aea51bbc10dcbb",
+	"Errors":[]
+}
+
 ```
 
 ### HTTP REQUEST
@@ -71,7 +93,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 Parameter | Description
 -------------- | --------------
-invitekey | **required** <br> invitation key to get details of invited team member (available from link sent via email of invitation sent to the user)
+invitekey | **required** <br> invitation key to get details of invited team member (available via invitation link sent as email to the invited user)
 
 ### HTTP RESPONSE
 

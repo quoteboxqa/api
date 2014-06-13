@@ -88,7 +88,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 Parameter | Description
 -------------- | --------------
-quoteid | **required** <i>- 0 for a new quote or a valid id to update an existing one </i> <br> id of the quote
+quoteid | **required** <i>- 0 for a new quote or a valid id to update an existing quote </i> <br> id of the quote
 title | **required** <i>- 3 to 50 characters long </i> <br> title of the quote
 pricing | **optional** <br> model for pricing information related to quote
 lineitems | **required** <i>- minimum 1 line item is required </i> <br> model for list of line items within the quote
@@ -867,7 +867,7 @@ Parameter | Description
 quoteid | **required** <br> id of the quote on which the action is performed
 quoteaction | **required** <br> action to perform on the quote <br><br> **supported actions:** sent, sentnotemailed, accepted, acceptedonbehalf, declined, markdeclined, revoked, inrevision, updateonly, withdrawn, acceptedundo, declineundo, revokeundo, withdrawundo, delete, clientdiscussion, teammemberdiscussion
 quoteresponse | **required** <br> model for metadata required to process the request
-primaryphonelist | model for list of primary phone number of recipient(s) of the quote <br><br> **not required** <i>, if the quote is secured</i> <br><br> **required** <i>, if the quote secured </i>
+primaryphonelist | model for list of primary phone number of recipient(s) of the quote <br><br> **not required**<i>, if the quote is secured</i> <br><br> **required**<i>, if the quote secured </i>
 
 
 ### HTTP Response 

@@ -75,13 +75,18 @@ Quotebox requires authorization for access to certain features such as creating 
 Following request would get a token to authorize all such requests as far as the session of the token does not expire.
 
 <aside class="notice">
-Ensure the user is activated with Quotebox
+User should be registered and activated with Quotebox
 </aside>
 
 ```shell
 # HTTP REQUEST BODY
 
 grant_type=password&username=john@company.com&password=P@ssw0rd
+```
+> The above request should yield following header in response
+
+```shell
+Token: xxXXXxxxXXxXxXXXXxxxxxXXXxxXXXXXxxXXX .....
 ```
 
 ### HTTP Request
@@ -93,7 +98,7 @@ grant_type=password&username=john@company.com&password=P@ssw0rd
 ### HTTP RESPONSE
 
 <aside class="success">
-200 OK - Token: some_hash_token (to be parsed from header of the response)
+200 Ok
 </aside>
 
 <aside class="warning">
@@ -102,7 +107,7 @@ grant_type=password&username=john@company.com&password=P@ssw0rd
 
 ## Logout
 
-This endpoint will logout the the user and dipose any temporary resources being consumed
+This endpoint will logout the the user and dispose any temporary resources being consumed
 
 ### HTTP Request
 
@@ -122,6 +127,10 @@ This endpoint will logout the the user and dipose any temporary resources being 
 
 This endpoint will change the password for a user.
 
+This endpoint simulates a scenario when a user is already signed-in to Quotebox and wants to change his/her password.
+
+Should you need to change current password of an user, make a call to this endpoint with required details.
+
 ```shell
 # HTTP REQUEST BODY
 
@@ -133,7 +142,7 @@ This endpoint will change the password for a user.
 ```
 
 <aside class="notice">
-Ensure the user is activated with Quotebox
+User should be registered and activated with Quotebox.
 </aside>
 
 Parameter | Description 
@@ -163,6 +172,10 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 ## Request to reset password
 
 This endpoint will send a password reset link to registered email.
+
+This endpoint simulates a scenario when a user forgot his/her password and wants to reset the same.
+
+Initially a user shall make a request to reset the password associated with the account, by calling this endpoint, the user should receive an email with the instructions and a link to reset the password.
 
 > Request to reset password should return the following JSON
 
@@ -196,6 +209,8 @@ email | **required** <i>- 10 to 65 characters long</i> <br> email of the user
 
 This endpoint will reset the password for an associated account.
 
+This endpoint simulates a scenario when the user has received the email to reset the password and click the link provided.
+
 ```shell
 # HTTP REQUEST BODY
 
@@ -214,7 +229,7 @@ This endpoint will reset the password for an associated account.
 Parameter | Description 
 -------------- | -------------- 
 email | **required** <i>- 10 to 65 characters long</i> <br> email of the user
-key | **required** <br>  key to request password (available from link sent via email to the registered email)
+key | **required** <br>  key to request password (available from link sent as email to the registered email)
 newpassword | **required** <i>- 8 to 16 characters long </i> <br> new password
 confirmnewpassword | **required** <i>- 8 to 16 characters long </i> <br> retype new password to verify
 
@@ -231,7 +246,9 @@ confirmnewpassword | **required** <i>- 8 to 16 characters long </i> <br> retype 
 
 ## Update account settings
 
-This endpoint will update settings associated with an account
+This endpoint will update settings associated with an account.
+
+Should you want to update preferences associated with an account, make a call to this endpoint with required details.
 
 ```shell
 # HTTP REQUEST BODY
@@ -463,6 +480,8 @@ inapp | **optional** <i>- default true, set false if in app notification not req
 
 This endpoint will get the account settings associated with an account.
 
+Should you want to view preferences associated with an account, make a call to this endpoint with valid account-id and required details
+
 ```shell
 # HTTP REQUEST BODY
 
@@ -530,7 +549,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 Parameter | Description
 -------------- | --------------
-accountsettings | **optional** <i>- minimum 1 item is required </i> <br> list of enum of account settings <br><br> ***supported values:*** QuoteApperance, QuoteDefaults, AccountCodes, TaxRates, EmailNotifications, EmailSetup, AccountBilling, PaymentInfo, InvoiceHistory, NotificationSettings, AccountDetails 
+accountsettings | **optional** <i>- minimum 1 item is required</i> <br> list of enum of account settings <br><br> ***supported values:*** QuoteApperance, QuoteDefaults, AccountCodes, TaxRates, EmailNotifications, EmailSetup, AccountBilling, PaymentInfo, InvoiceHistory, NotificationSettings, AccountDetails 
 invoicelistpageno | **optional** <br>  page number of invoice to get, pass 0 if none | 0 | integer |
 
 ### HTTP RESPONSE

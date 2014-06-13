@@ -24,7 +24,6 @@ This endpoint will create or update a template.
 		},
 		{ 
 			"id":"53916ee223aea518b44ae328",
-			"id":"53916ee223aea518b44ae328",
 			"itemtype":"Product", 
 			"itemcode":"001", 
 			"itemname":"Terminator 1", 
@@ -75,7 +74,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 Parameter | Description
 -------------- | --------------
-id | **optional** <br> id of template to update, ***pass a valid id to update an existing template***
+id | **optional** <br> id of template, pass an id only if want to update an existing template
 title | **required** <i>- 3 to 50 characters long </i> <br> title of the template
 pricing | **optional** <br> model for pricing information related to template
 lineitems | **required** <i>- minimum 1 line item is required </i> <br> model for list of line items within the template
