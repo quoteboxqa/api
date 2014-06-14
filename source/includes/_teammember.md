@@ -53,7 +53,7 @@ accountname | **optional** <br> name of the account to invite the user in Quoteb
 
 This endpoint will get the details of a invited team member.
 
-This endpoint simulates as scenario when a user wants to get details 
+This endpoint simulates as scenario when a user wants to get invited team member related meta data.
 
 ```shell
 # HTTP REQUEST BODY
@@ -109,6 +109,8 @@ invitekey | **required** <br> invitation key to get details of invited team memb
 
 This endpoint will delete an invitation.
 
+Should you prevent a user from joining your account once invited, make a call to this endpoint to delete invitation for a user.
+
 ```shell
 # HTTP REQUEST BODY
 
@@ -144,6 +146,8 @@ teammemberid | **required** <br> id of team member to delete invitation for
 ## Accept invitation
 
 This endpoint will accept the invitation to join an account with Quotebox.
+
+This endpoint will simulate a scenario when an invited user wants to accept the invitation to join Quotebox.
 
 ```shell
 # HTTP REQUEST BODY
@@ -181,59 +185,13 @@ invitekey | **required** <br> invitation key required to verify the invitation r
 400 Badrequest - { validation related errors }
 </aside>
 
-## Fetch team member
+## List team member(s)
 
-This endpoint will find a team member.
+This endpoint will list amongst team member(s).
 
-```shell
-# HTTP REQUEST BODY
+This endpoint will simulate a scenario when an user wants to list associated team members.
 
-{
-	"teammemberid":"5380700d995ba3047cc5ff1c"
-}
-```
-
-> The above request should return following JSON
-
-```shell
-# HTTP RESPOSNE OBJECT
-
-{
-	"teammemberid":"5380700d995ba3047cc5ff1c", 
-	"teammemberemail":"jane@company.com", 
-	"isadmin": true
-}
-```
-
-### HTTP REQUEST
-
-`POST api/Account/FetchTeamMember`
-
-<aside class="notice">
-Include bearer token in header to authorize: `Authorization: Bearer token_value`
-</aside>
-
-### HTTP REQUEST BODY PARAMETERS
-
-Parameter | Description
--------------- | --------------
-teammemberid | **required** <br> id of team member to fetch
-
-### HTTP RESPONSE
-
-<aside class="success">
-200 OK
-</aside>
-
-<aside class="warning">
-400 Badrequest - { validation related errors }
-</aside>
-
-## Search team member
-
-This endpoint will search amongst team members.
-
-> The search request should return following JSON
+> The list request should return following JSON
 
 ```shell
 # HTTP RESPOSNE OBJECT
@@ -256,7 +214,7 @@ This endpoint will search amongst team members.
 
 ### HTTP REQUEST
 
-`POST api/Account/SearchTeamMember`
+`POST api/Account/List`
 
 <aside class="notice">
 Include bearer token in header to authorize: `Authorization: Bearer token_value`
@@ -275,6 +233,10 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 ## Remove team member
 
 This endpoint will remove a team member from associated account.
+
+Should you remove a team member (de-associate) associated with your account, make a call to this endpoint.
+
+**Note:** This action would de-active the user (team member) you removed and there after he/she will have to sign-up again with different email to continue using Quotebox.
 
 ```shell
 # HTTP REQUEST BODY
@@ -311,6 +273,8 @@ teammemberid | **required** <br> id of team member to be removed
 ## Update team member
 
 This endpoint will update alternate email and rights for a team member associated with an account.
+
+This endpoint will simulate a scenario when a user wants to update meta data for an associated team member such as ***alternate email*** and/or ***rights*** - <i>admin or user</i>
 
 ```shell
 # HTTP REQUEST BODY

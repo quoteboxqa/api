@@ -2,7 +2,7 @@
 
 ## Get recent activities
 
-This endpoint will get recent list of quotes for the associated account.
+This endpoint will get recent list of quotes and summary of quotes for the associated account.
 
 > The request should return following JSON
 
@@ -70,7 +70,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 ## Get analytics
 
-This endpoint will get analytical meta data.
+This endpoint will get analytics meta data for two graph types: a. Line chart and b. Bullet chart. which is represent the statistics on overall quotes associated with an account for a specified amount of time (by date/time range)
 
 ```shell
 # HTTP REQUEST BODY
