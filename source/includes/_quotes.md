@@ -1,8 +1,16 @@
 # Quote
 
-## Create quote
+## Create or update quote
 
-This endpoint will create a new quote.
+This endpoint will create a new quote or update an existing one.
+
+Set property **quoteid** with 0 as value to create a new quote or  with valid quoteid to update an existing one.
+
+To create a quote you'll need at-least 1 line item (irrespective of the type), a recipient (client).
+
+If you intend to secure your quote from anonymous access other than the recipient (client), set **accesscode** property with a 6 digit code.
+
+**Note:** Any recipient specified while create or update a quote, will be saved implicitly in Recipient collection, if it does not exist in Recipient collection
 
 ```shell
 # HTTP REQUEST BODY
@@ -147,6 +155,10 @@ groupname | **optional** <i>- 4 to 25 characters long </i> <br> name of group to
 
 This endpoint will allow a client to accept or decline a quote
 
+This endpoint will simulate a scenario when a recipient (client) would accept or decline the quote.
+
+**Note:**  If the recipient (client) choose to decline the quote, set `{ "quoteresponse": { "comment":"some comment as why the quote was declined" }` on behalf of the recipient (client)
+
 ```shell
 # HTTP REQUEST BODY
 
@@ -180,7 +192,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 Parameter | Description
 -------------- | --------------
-quoteaction | **required** <br> action to indicate if the quote was accepted or rejected <br><br> ***supported values:*** accepted, declined
+quoteaction | **required** <br> action to indicate if the quote was accepted or declined <br><br> ***supported values:*** accepted, declined
 key | **required** <br> key to authenticate the client and the associated quote to perfom the action (available from link sent to recipient as an email)
 quoteresponse | **required** <br> model for metadata required to process the request
 
@@ -207,6 +219,8 @@ selecteitemids | **optional** - if all line items are required or **at 1 line it
 ## Create discussion
 
 This endpoint will create a discussion within the quote.
+
+This endpoint will simulate a scenario when the author(user) of the quote would like to discuss(comment) with respect to an associated quote.
 
 ```shell
 # HTTP REQUEST BODY
@@ -251,9 +265,49 @@ isprivate | **optional** ***-boolean*** <i>, default false, true if it is a pria
 400 Badrequest - { validation related errors }
 </aside>
 
+## Create client discussion
+
+This endpoint will create a discussion within the quote.
+
+This endpoint will simulate a scenario when the recipient(client) of the quote would like to discuss(comment) with respect to an associated quote.
+
+```shell
+# HTTP REQUEST BODY
+
+{ 
+  	"fromname":"John Doe",
+	"fromemail":"john@company.com",
+	"commenttext":"Hey this is a comment from Quotebox",
+}
+```
+
+### HTTP REQUEST
+
+`POST api/Quote/ClientDiscussion` - Is an anonymous request
+
+### HTTP REQUEST BODY PARAMETERS
+
+Parameter | Description
+-------------- | --------------
+fromname | **required** <br> name of creator of the discussion
+fromemail | **required** <br> email of creator of the discussion
+commenttext | **required** <br> text to display in discussion
+
+### HTTP Response 
+
+<aside class="success">
+200 OK
+</aside>
+
+<aside class="warning">
+400 Badrequest - { validation related errors }
+</aside>
+
 ## Get quote
 
-This endpoint will get the quote.
+This endpoint will get the quote metadata.
+
+This endpoint will simulate a scenario when an author (user) would like to edit or preview (client view) an existing quote to see as how it would look to a recipient (client) 
 
 > The request should return the following JSON
 
