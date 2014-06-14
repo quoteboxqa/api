@@ -1,6 +1,6 @@
 # Team Member
 
-## Invite team member
+## Invite
 
 This endpoint will send an invitation via email to join Quotebox.
 
@@ -49,7 +49,7 @@ accountname | **optional** <br> name of the account to invite the user in Quoteb
 400 Badrequest - { validation related errors }
 </aside>
 
-## Get invited team member
+## Get
 
 This endpoint will get the details of a invited team member.
 
@@ -105,7 +105,7 @@ invitekey | **required** <br> invitation key to get details of invited team memb
 400 Badrequest - { validation related errors }
 </aside>
 
-## Delete invitation
+## Delete
 
 This endpoint will delete an invitation.
 
@@ -143,7 +143,7 @@ teammemberid | **required** <br> id of team member to delete invitation for
 400 Badrequest - { validation related errors }
 </aside>
 
-## Accept invitation
+## Accept
 
 This endpoint will accept the invitation to join an account with Quotebox.
 
@@ -185,7 +185,7 @@ invitekey | **required** <br> invitation key required to verify the invitation r
 400 Badrequest - { validation related errors }
 </aside>
 
-## List team member(s)
+## List
 
 This endpoint will list amongst team member(s).
 
@@ -230,7 +230,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 400 Badrequest - { validation related errors }
 </aside>
 
-## Remove team member
+## Remove
 
 This endpoint will remove a team member from associated account.
 
@@ -270,7 +270,7 @@ teammemberid | **required** <br> id of team member to be removed
 400 Badrequest - { validation related errors }
 </aside>
 
-## Update team member
+## Update
 
 This endpoint will update alternate email and rights for a team member associated with an account.
 

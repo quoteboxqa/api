@@ -4,7 +4,7 @@
 
 This endpoint will get an upload URI to upload attachments associated with an account.
 
-You'll need an upload uri for reference of actual files uploaded to our Azure storage, or you'll keep looking for them and would get just nothing later on. Don't blame it on us then.
+This endpoint resembles a scenario when an user wants to upload an attachment, to provision upload, the user needs to make a request to get the upload uri associated to his/her account, which in turn is required to create an attachment in the Create attachment action specified.
 
 > The request should return the following response
 
@@ -33,9 +33,13 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 400 Badrequest - { validation related errors }
 </aside>
 
-## Create attachment
+## Create
 
 This endpoint will create a new attachment of the specified type.
+
+This endpoint resembles a scenario when the system will create an attachment (save the attachment details to the database), once the uploading of the file was successful.
+
+**Note:** </br><ul><li>If the attachment is uploaded directly to the library section, pass "InLibrary":true in the request as shown in the example.</li> <li> Also ensure the type of attachment matches the file type uploaded.</li></ul>
 
 ```shell
 
@@ -83,9 +87,11 @@ tags | **optional** <br> model for list of tags associated with the file
 400 Badrequest - { validation related errors }
 </aside>
 
-## Update caption
+## Update
 
 This endpoint will update caption of an existing attachment.
+
+This endpoint resembles a scenario when an user wants to edit the caption associated with an attachment.
 
 ```shell
 
@@ -121,9 +127,11 @@ caption | **required** <i>- 3 to 50 characters long</i> <br> caption for file, c
 400 Badrequest - { validation related errors }
 </aside>
 
-## Get attachment
+## Get
 
 This endpoint will get an attachment.
+
+This endpoint resembles a scenario when an user wants to view an existing attachment.
 
 ```shell
 
@@ -169,9 +177,11 @@ id | **required** <br> id of the attachment to get
 400 Badrequest - { validation related errors }
 </aside>
 
-## Search attachment
+## Search
 
 This endpoint will search an attachment of specified type with advanced filters (if applied).
+
+This endpoint resembles a scenario when an user wants to search an attachment from a list of attachments for the specified type of attachment.
 
 ```shell
 
@@ -239,9 +249,11 @@ id | **required** <br> id of the attachment to get
 400 Badrequest - { validation related errors }
 </aside>
 
-## Delete attachment
+## Delete
 
 This endpoint will delete an attachment.
+
+This endpoint resembles a scenario when an user wants to delete an attachment/attachment(s) from an existing list of attachments.
 
 ```shell
 
@@ -250,8 +262,8 @@ This endpoint will delete an attachment.
 {
 	"AttachmentsIdList":
 	[
-		"",
-		"",
+		"5396b4d423aea51f4cbdab14",
+		"5396b4d423aea51f4cbdab15",
 		...
 	],
 	"DeleteFromLibrary":true
@@ -284,7 +296,9 @@ DeleteFromLibrary | **optional** ***- boolean*** <i>, default false, true if wan
 
 ## Get document view session id
 
-This endpoint will get session id associated for a document attachment type associated with an account.
+This endpoint will get session id associated for a document type associated with an account.
+
+This endpoint resembles a scenario when a recipient (client) click on document type of attachment to view.
 
 > The request should return the following JSON
 

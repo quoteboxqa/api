@@ -1,8 +1,14 @@
 # Template
 
-## Create or update template
+## Create or update
 
 This endpoint will create or update a template.
+
+This endpoint resembles scenario when an author (user) would like to create a new template or update an existing template.
+
+**Note:** Do not pass "id" if need to create a new template
+
+To create or update a template you'll need at-least 1 line item (irrespective of the type)
 
 ```shell
 # HTTP REQUEST BODY
@@ -127,9 +133,13 @@ groupname | **optional** <i>- 4 to 25 characters long </i> <br> name of group to
 400 Badrequest - { validation related errors }
 </aside>
 
-## Get template
+## Get
 
 This endpoint will get a template.
+
+This endpoint resembles a scenario when an author (user) would like to edit an existing template.
+
+**Note:** All line-items/note-items are referenced within a template and not embedded, if you need to edit a part of a given line-item/note-item, edit those from Line item/ Note item section.
 
 > The request should return the following JSON
 
@@ -207,7 +217,7 @@ This endpoint will get a template.
 
 ### HTTP REQUEST
 
-`GET api/Template/Get?id=5380700d995ba3047cc5ff1d`
+`GET api/Template?id=5380700d995ba3047cc5ff1d`
 
 <aside class="notice">
 Include bearer token in header to authorize: `Authorization: Bearer token_value`
@@ -230,9 +240,11 @@ ispreview | **optional** ***- boolean*** <i>, default false, set to true to get 
 400 Badrequest - { validation related errors }
 </aside>
 
-## Archive template
+## Archive
 
 This endpoint will set template as archived.
+
+This endpoint resembles a scenario when an author (user) wants to archive a template.
 
 ```shell
 # HTTP REQUEST BODY
@@ -271,9 +283,13 @@ templateidlist | **minimum 1 template id required** <br> list of template ids to
 400 Badrequest - { validation related errors }
 </aside>
 
-## Search template
+## Search
 
-This endpoint will search a template with advanced filters (if applied)
+This endpoint will search a template with advanced filters (if applied).
+
+This endpoint resembles a scenario when an author (user) wants to search a template.
+
+**Note:** You can search a. only archived templates, b. only current template or c. both archived as well as current templates in a single search request
 
 ```shell
 # HTTP REQUEST BODY
@@ -288,7 +304,6 @@ This endpoint will search a template with advanced filters (if applied)
 		"isdescending":true
 	}
 }
-
 ```
 
 > The above request should return following JSON
@@ -323,7 +338,6 @@ This endpoint will search a template with advanced filters (if applied)
 	"HasPreviousPage":false,
 	"HasNextPage":false
 }
-
 ```
 
 ### HTTP REQUEST
@@ -361,11 +375,13 @@ isdescending | **optional** <i>- default is true </i> <br> property to sort item
 400 Badrequest - { validation related errors }
 </aside>
 
-## Delete template
+## Delete
 
 This endpoint will delete a template
 
-### HTTP REQUEST
+This endpoint resembles a scenario when an author (user) wants to delete an existing template.
+
+### HTTP Request
 
 `DELETE api/Template/Delete?id=5392fb2923aea50c60e870e1`
 
@@ -383,7 +399,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 400 Badrequest - { validation related errors }
 </aside>
 
-## Multidelete template
+## Delete multiple
 
 This endpoint will allow you to delete multiple templates in single request
 
@@ -403,7 +419,7 @@ This endpoint will allow you to delete multiple templates in single request
 
 ### HTTP REQUEST
 
-`POST api/template/Search`
+`POST api/Template/MultiDelete`
 
 <aside class="notice">
 Include bearer token in header to authorize: `Authorization: Bearer token_value`
@@ -425,9 +441,9 @@ templateidlist | **minimum 1 template id is required** <br> model for list of te
 400 Badrequest - { validation related errors }
 </aside>
 
-## Make default template
+## Make default
 
-This endpoint will allow you to mark the template as a default template.
+This endpoint resembles a scenario when an author (user) wants to mark a template as default so that he/she can create quotes without filling-in line items/note items and other details repeatedly.
 
 ```shell
 # HTTP REQUEST BODY
@@ -435,7 +451,6 @@ This endpoint will allow you to mark the template as a default template.
 {
 	"templateid": "5392fb2923aea50c60e610r3",
 }
-
 ```
 
 ### HTTP REQUEST

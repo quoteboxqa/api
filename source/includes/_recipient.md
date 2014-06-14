@@ -1,8 +1,10 @@
-# Recipient
+# Recipient (person)
 
-## Create or update recipient
+## Create or update
 
-This endpoint will create or update a recipient
+This endpoint will create or update a recipient (person).
+
+This endpoint resembles a scenario when an user wants to either create a new recipient (person) or update an existing recipient (person).
 
 ```shell
 # HTTP REQUEST BODY
@@ -75,9 +77,11 @@ tags | **optional** <br> model for list of tags associated with the recipient
 400 Badrequest - { validation related errors }
 </aside>
 
-## Get recipient
+## Get
 
-This endpoint will get a recipient.
+This endpoint will get a recipient (person).
+
+This endpoint resembles a scenario when an user wants to view/edit an existing recipient (person).
 
 > The request should return the following JSON
 
@@ -145,9 +149,11 @@ type | **required** <br> type of recipient requested <br> **supported inputs:** 
 400 Badrequest - { validation related errors }
 </aside>
 
-## Archive recipient
+## Archive
 
-This endpoint will archive recipient(s).
+This endpoint will archive recipient(s) (person).
+
+This endpoint resembles a scenario when an user wants to archive an existing recipient(s) (person).
 
 ```shell
 # HTTP REQUEST BODY
@@ -186,9 +192,11 @@ recipientids | **minimum 1 recipient id required** <br> list of recipient ids to
 400 Badrequest - { validation related errors }
 </aside>
 
-## Search recipient
+## Search
 
-This endpoint will search a recipient with advanced filters (if applied)
+This endpoint will search a recipient with advanced filters (if applied).
+
+This endpoint resembles a scenario when an user wants to search a recipient (person) from a list of existing recipient(s) (person).
 
 ```shell
 # HTTP REQUEST BODY
@@ -273,9 +281,9 @@ isdescending | **optional** <i>- default is true </i> <br> property to sort item
 400 Badrequest - { validation related errors }
 </aside>
 
-## Clean up recipient(s)
+## Clean up
 
-This endpoint will delete all recipients associated with an account which has no quotes associated with itself.
+This endpoint resembles a scenario when an user wants to quickly delete all recipient(s) (person & companies) associated with his/her account with whom no quotes (irrespective of the type) are associated.
 
 ```shell
 # HTTP REQUEST BODY

@@ -1,8 +1,12 @@
 # Note item
 
-## Create or update note item
+## Create or update
 
 This endpoint will create or update a note item.
+
+This endpoint resembles a scenario when an user wants to either create a new note item or update an existing note item.
+
+**Note"** pass "id" with valid note item id to update.
 
 ```shell
 # HTTP REQUEST BODY
@@ -53,9 +57,11 @@ groupname | **optional** <i>- 4 to 25 characters long </i> <br> name of group to
 400 Badrequest - { validation related errors }
 </aside>
 
-## Get note item
+## Get
 
 This endpoint will get a note item.
+
+This end point resembles a scenario when an user wants to get note item details to view/edit.
 
 > The request should return the following JSON
 
@@ -99,9 +105,11 @@ id | **required** <br> id of the note item to get
 400 Badrequest - { validation related errors }
 </aside>
 
-## Archive note item
+## Archive
 
 This endpoint will set note item as archived.
+
+This endpoint resembles a scenario when an user wants to mark an existing note item as archived.
 
 ```shell
 # HTTP REQUEST BODY
@@ -140,9 +148,11 @@ noteitemids | **minimum 1 note item id required** <br> list of note item ids to 
 400 Badrequest - { validation related errors }
 </aside>
 
-## Search note item
+## Search
 
-This endpoint will search a note item with advanced filters (if applied)
+This endpoint will search a note item with advanced filters (if applied).
+
+This endpoint resembles a scenario when an user wants to search a note item from a list of note items.
 
 ```shell
 # HTTP REQUEST BODY
@@ -229,9 +239,11 @@ isdescending | **optional** <i>- default is true </i> <br> property to sort item
 400 Badrequest - { validation related errors }
 </aside>
 
-## Delete note item
+## Delete
 
-This endpoint will delete a note item
+This endpoint will delete a note item.
+
+This endpoint resembles a scenario when an user wants to delete an existing note item.
 
 ### HTTP REQUEST
 
@@ -253,7 +265,9 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 ## Find note item
 
-This endpoint will find note item(s) as per the key word (used to fetch note items as autocomplete result)
+This endpoint will find note item(s) as per the key word (used to fetch note items as auto-complete result).
+
+This endpoint resembles a scenario when an user would type title of note item while creating a. quote or b. template and the system would fetch appropriate match for the provided input and return a list of note items as an auto-complete view.
 
 ```shell
 # HTTP REQUEST BODY

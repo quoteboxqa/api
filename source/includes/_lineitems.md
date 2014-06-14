@@ -1,8 +1,12 @@
 # Line item
 
-## Create or update line item
+## Create or update
 
 This endpoint will create or update a line item.
+
+This endpoint resembles a scenario when an user wants to either create a new line item or update an existing line item.
+
+**Note"** pass "id" with valid line item id to update.
 
 ```shell
 # HTTP REQUEST BODY
@@ -85,9 +89,11 @@ currency | **required** <br> currency in which amount would be computed and disp
 400 Badrequest - { validation related errors }
 </aside>
 
-## Get line item
+## Get
 
 This endpoint will get a line item.
+
+This end point resembles a scenario when an user wants to get line item details to view/edit.
 
 > The request should return the following JSON
 
@@ -187,9 +193,11 @@ id | **required** <br> id of the line item to get
 400 Badrequest - { validation related errors }
 </aside>
 
-## Archive line item
+## Archive
 
 This endpoint will set line item as archived.
+
+This endpoint resembles a scenario when an user wants to mark an existing line item as archived.
 
 ```shell
 # HTTP REQUEST BODY
@@ -228,9 +236,11 @@ lineitemids | **minimum 1 line item id required** <br> list of line item ids to 
 400 Badrequest - { validation related errors }
 </aside>
 
-## Search line item
+## Search
 
-This endpoint will search a line item with advanced filters (if applied)
+This endpoint will search a line item with advanced filters (if applied).
+
+This endpoint resembles a scenario when an user wants to search a line item from a list of line items.
 
 ```shell
 # HTTP REQUEST BODY
@@ -319,9 +329,11 @@ isdescending | **optional** <i>- default is true </i> <br> property to sort item
 400 Badrequest - { validation related errors }
 </aside>
 
-## Delete line item
+## Delete
 
-This endpoint will delete a line item
+This endpoint will delete a line item.
+
+This endpoint resembles a scenario when an user wants to delete an existing line item.
 
 ### HTTP REQUEST
 
@@ -343,7 +355,9 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 ## Find line item
 
-This endpoint will find line item(s) as per the key word (used to fetch line items as autocomplete result)
+This endpoint will find line item(s) as per the key word (used to fetch line items as auto-complete result).
+
+This endpoint resembles a scenario when an user would type a. item code or b. item name while creating a. quote or b. template and the system would fetch appropriate match for the provided input and return a list of line items as an auto-complete view.
 
 ```shell
 # HTTP REQUEST BODY

@@ -1,8 +1,10 @@
-# Recipient-Company
+# Recipient (company)
 
-## Create or update recipient-company
+## Create or update
 
-This endpoint will create or update a recipient-company
+This endpoint will create or update a recipient (company).
+
+This endpoint resembles a scenario when an user wants to either create a new recipient (company) or update an existing recipient (company).
 
 ```shell
 # HTTP REQUEST BODY
@@ -72,9 +74,11 @@ tags | **optional** <br> model for list of tags associated with the recipient-co
 400 Badrequest - { validation related errors }
 </aside>
 
-## Archive recipient-company
+## Archive
 
-This endpoint will archive recipient-company(s).
+This endpoint will archive recipient(s) (company).
+
+This endpoint resembles a scenario when an user wants to archive recipient(s) (company).
 
 ```shell
 # HTTP REQUEST BODY
@@ -113,9 +117,9 @@ recipientcompanyids | **minimum 1 recipient-company id required** <br> list of r
 400 Badrequest - { validation related errors }
 </aside>
 
-## Clean up recipient-company(s)
+## Clean up
 
-This endpoint will delete all recipients with no quotes associated with itself within a recipient-company associated with an account.
+This endpoint resembles a scenario when an user wants to quickly delete all recipient(s) (person & companies) associated with his/her account with whom no quotes (irrespective of the type) are associated.
 
 ```shell
 # HTTP REQUEST BODY

@@ -1,8 +1,10 @@
 # Tags
 
-## Edit or delete tags
+## Edit or delete
 
 This endpoint will edit or delete a tag.
+
+This endpoint resembles a scenario when an user wants to a. Add a new tag, b. edit an existing tag or c. delete an existing tag.
 
 ```shell
 # HTTP REQUEST BODY
@@ -48,9 +50,11 @@ itemid | **optional** <i>- 4 to 25 characters long </i> <br> name of group to wh
 400 Badrequest - { validation related errors }
 </aside>
 
-## Rearrange tags
+## Rearrange
 
-This endpoint will get a re-arrange the order of the tags associated with the type
+This endpoint will re-arrange an existing list of tags as per the tag type provided.
+
+This endpoint resembles a scenario when an user wants to re-arrange (re-position) a list of tags as per tag type provided.
 
 > The request should return the following JSON
 
@@ -80,7 +84,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 Argument | Description
 -------------- | --------------
-tagtype | **required** <br> type of tags to re-arrange
+tagtype | **required** <br> type of tags to re-arrange <br> **supported values:** LineItem, NoteItem, Template, Recipient, RecipientCompany, Attachment
 tags | **required** <br> model for list of tags to rearrange
 
 ### HTTP Response 

@@ -1,12 +1,12 @@
 # Quote
 
-## Create or update quote
+## Create or update
 
 This endpoint will create a new quote or update an existing one.
 
 Set property **quoteid** with 0 as value to create a new quote or  with valid quoteid to update an existing one.
 
-To create a quote you'll need at-least 1 line item (irrespective of the type), a recipient (client).
+To create or update a quote you'll need at-least 1 line item (irrespective of the type), a recipient (client).
 
 If you intend to secure your quote from anonymous access other than the recipient (client), set **accesscode** property with a 6 digit code.
 
@@ -151,7 +151,7 @@ groupname | **optional** <i>- 4 to 25 characters long </i> <br> name of group to
 400 Badrequest - { validation related errors }
 </aside>
 
-## Client accept or decline quote
+## Client accept or decline
 
 This endpoint will allow a client to accept or decline a quote
 
@@ -303,7 +303,7 @@ commenttext | **required** <br> text to display in discussion
 400 Badrequest - { validation related errors }
 </aside>
 
-## Get quote
+## Get
 
 This endpoint will get the quote metadata.
 
@@ -589,7 +589,7 @@ accesscode | **optional** - if quote is not secure, else **required** - if quote
 400 Badrequest - { validation related errors }
 </aside>
 
-## Archive quote
+## Archive
 
 This endpoint will set quote as archived.
 
@@ -632,7 +632,7 @@ quoteidlist | **minimum 1 quote id required** <br> list of quote ids to archive
 400 Badrequest - { validation related errors }
 </aside>
 
-## Copy quote
+## Copy
 
 This endpoint will set create a copy of the quote.
 
@@ -737,7 +737,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 400 Badrequest - { validation related errors }
 </aside>
 
-## Search quote
+## Search
 
 This endpoint will search a quote with advanced filters (if applied).
 
@@ -899,9 +899,47 @@ duration | **optional** ***- integer*** <i>, in miliseconds </i> <br> duration o
 400 Badrequest - { validation related errors }
 </aside>
 
-## Quote (Action)	
+## Quote action
 
 This endpoint will update the quote meta data as per the action taken on the quote either by the author(user) and/or the recipient(client) of the quote.
+
+This endpoint resembles a scenario when a author(user) wants to perform any of the following actions on a quote:
+
+<ul>
+<li> <b>Sent</b> use as "sent" </br>Action taken when a quote is SENT </li>
+</br>
+<li> <b>Sent not emailed</b> use as "sentnotemailed" </br>Action taken when quote is to be set as SENT but is not emailed to the recipient(s) (client) </li>
+</br>
+<li> <b>Accepted</b> use as "accepted" </br>Action taken when a quote is ACCEPTED by the recipient (client) </li>
+</br>
+<li> <b>Accept on behalf</b> use as "acceptedonbehalf" </br>Action taken when a quote is to be set as ACCEPTED but on behalf of the recipient (client) </li>
+</br>
+<li> <b>Declined</b> use as "declined" </br>Action taken when a quote is DECLINED by the recipient (client) </li>
+</br>
+<li> <b>Mark declined</b> use as "markdeclined" </br>Action taken when a quote is to be set as DECLINED but on behalf of the recipient (client) </li>
+</br>
+<li> <b>Revoked</b> use as "revoked" </br>Action taken when a quote is <a href="http://en.wikipedia.org/wiki/Revoke">REVOKED</a> by the author (user) </li>
+</br>
+<li> <b>In revision</b> use as "inrevision" </br>Action taken when a quote is taken offline (temporarily unavailable to the recipient (client)) to edit </li>
+</br>
+<li> <b>Update only</b> use as "updateonly" </br>Action taken when the author does not want to send the updated quote to the recipient(s) but only save the changes </li>
+</br>
+<li> <b>Withdrawn</b> use as "withdrawn" </br>action taken when the author (user) no longer wants to communicate or make further deal w.r.t to associated quote with the recipient(s) (client) </li>
+</br>
+<li> <b>Accepted undo</b> use as "accptedundo" </br> Action taken when an author (user) wants to undo the ACCEPTED ON BEHALF action taken previously for a quote</li>
+</br>
+<li> <b>Decline undo</b> use as "declineundo" </br> Action taken when an author (user) wants to undo the MARK DECLINED action taken previously for a quote</li>
+</br>
+<li> <b>Revoke undo</b> use as "revokeundo" </br> Action taken when an author (user) wants to undo the REVOKE action take previously for a quote </li>
+</br>
+<li> <b>Withdraw undo</b> use as "withdrawundo" </br> Action taken when an author (user) wants to undo WITHDRAWN action taken previously for a quote </li>
+</br>
+<li> <b>Delete</b> use as "delete" </br>Action taken when an author (user) wants to DELETE a quote, <b>Note: only quotes with DRAFT status can be deleted</b> </li>
+</br>
+<li> <b>Client discussion</b> use as "clientdiscussion" </br>Action taken when a recipient (client) will comment on a quote </li>
+</br>
+<li> <b>Team member discussion</b> use as "teammemberdiscussion" </br>Action taken when an author (user) will comment on a quote </li>
+</ul>
 
 ```shell
 # HTTP REQUEST BODY

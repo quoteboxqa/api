@@ -1,6 +1,6 @@
 # User Profile
 
-## Get user profile
+## Get
 
 This endpoint will get profile details of the user.
 
@@ -55,7 +55,7 @@ userid | **required** <br> id associated with an user
 400 Badrequest - { validation related errors }
 </aside>
 
-## Update user profile
+## Update
 
 This endpoint will update profile details of the user.
 
