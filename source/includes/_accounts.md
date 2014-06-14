@@ -127,7 +127,7 @@ This endpoint will logout the the user and dispose any temporary resources being
 
 This endpoint will change the password for a user.
 
-This endpoint simulates a scenario when a user is already signed-in to Quotebox and wants to change his/her password.
+This endpoint resembles a scenario when a user is already signed-in to Quotebox and wants to change his/her password.
 
 Should you need to change current password of an user, make a call to this endpoint with required details.
 
@@ -173,7 +173,7 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 This endpoint will send a password reset link to registered email.
 
-This endpoint simulates a scenario when a user forgot his/her password and wants to reset the same.
+This endpoint resembles a scenario when a user forgot his/her password and wants to reset the same.
 
 Initially a user shall make a request to reset the password associated with the account, by calling this endpoint, the user should receive an email with the instructions and a link to reset the password.
 
@@ -209,7 +209,7 @@ email | **required** <i>- 10 to 65 characters long</i> <br> email of the user
 
 This endpoint will reset the password for an associated account.
 
-This endpoint simulates a scenario when the user has received the email to reset the password and click the link provided.
+This endpoint resembles a scenario when the user has received the email to reset the password and click the link provided.
 
 ```shell
 # HTTP REQUEST BODY

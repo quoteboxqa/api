@@ -4,7 +4,7 @@
 
 This endpoint will send an invitation via email to join Quotebox.
 
-This endpoint simulates a scenario when a user wants to invite another user to his/her account on Quotebox.
+This endpoint resembles a scenario when a user wants to invite another user to his/her account on Quotebox.
 
 ```shell
 # HTTP REQUEST BODY
@@ -53,7 +53,7 @@ accountname | **optional** <br> name of the account to invite the user in Quoteb
 
 This endpoint will get the details of a invited team member.
 
-This endpoint simulates as scenario when a user wants to get invited team member related meta data.
+This endpoint resembles as scenario when a user wants to get invited team member related meta data.
 
 ```shell
 # HTTP REQUEST BODY
@@ -147,7 +147,7 @@ teammemberid | **required** <br> id of team member to delete invitation for
 
 This endpoint will accept the invitation to join an account with Quotebox.
 
-This endpoint will simulate a scenario when an invited user wants to accept the invitation to join Quotebox.
+This endpoint resembles a scenario when an invited user wants to accept the invitation to join Quotebox.
 
 ```shell
 # HTTP REQUEST BODY
@@ -189,7 +189,7 @@ invitekey | **required** <br> invitation key required to verify the invitation r
 
 This endpoint will list amongst team member(s).
 
-This endpoint will simulate a scenario when an user wants to list associated team members.
+This endpoint resembles a scenario when an user wants to list associated team members.
 
 > The list request should return following JSON
 
@@ -274,7 +274,7 @@ teammemberid | **required** <br> id of team member to be removed
 
 This endpoint will update alternate email and rights for a team member associated with an account.
 
-This endpoint will simulate a scenario when a user wants to update meta data for an associated team member such as ***alternate email*** and/or ***rights*** - <i>admin or user</i>
+This endpoint resembles a scenario when a user wants to update meta data for an associated team member such as ***alternate email*** and/or ***rights*** - <i>admin or user</i>
 
 ```shell
 # HTTP REQUEST BODY

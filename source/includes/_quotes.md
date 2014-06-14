@@ -155,7 +155,7 @@ groupname | **optional** <i>- 4 to 25 characters long </i> <br> name of group to
 
 This endpoint will allow a client to accept or decline a quote
 
-This endpoint will simulate a scenario when a recipient (client) would accept or decline the quote.
+This endpoint resembles a scenario when a recipient (client) would accept or decline the quote.
 
 **Note:**  If the recipient (client) choose to decline the quote, set `{ "quoteresponse": { "comment":"some comment as why the quote was declined" }` on behalf of the recipient (client)
 
@@ -220,7 +220,7 @@ selecteitemids | **optional** - if all line items are required or **at 1 line it
 
 This endpoint will create a discussion within the quote.
 
-This endpoint will simulate a scenario when the author(user) of the quote would like to discuss(comment) with respect to an associated quote.
+This endpoint resembles a scenario when the author(user) of the quote would like to discuss(comment) with respect to an associated quote.
 
 ```shell
 # HTTP REQUEST BODY
@@ -269,7 +269,7 @@ isprivate | **optional** ***-boolean*** <i>, default false, true if it is a pria
 
 This endpoint will create a discussion within the quote.
 
-This endpoint will simulate a scenario when the recipient(client) of the quote would like to discuss(comment) with respect to an associated quote.
+This endpoint resembles a scenario when the recipient(client) of the quote would like to discuss(comment) with respect to an associated quote.
 
 ```shell
 # HTTP REQUEST BODY
@@ -307,7 +307,7 @@ commenttext | **required** <br> text to display in discussion
 
 This endpoint will get the quote metadata.
 
-This endpoint will simulate a scenario when an author (user) would like to edit or preview (client view) an existing quote to see as how it would look to a recipient (client) 
+This endpoint resembles a scenario when an author (user) would like to edit or preview (client view) an existing quote to see as how it would look to a recipient (client) 
 
 > The request should return the following JSON
 
@@ -450,6 +450,8 @@ ispreview | **optional** ***- boolean*** <i>, default false, set to true to get 
 
 This endpoint will get the quote.
 
+This endpoint resembles a scenario when a recipient(client) will click on the quote link sent as email.
+
 > The request should return the following JSON
 
 ```shell
@@ -591,6 +593,8 @@ accesscode | **optional** - if quote is not secure, else **required** - if quote
 
 This endpoint will set quote as archived.
 
+This endpoint resembles a scenario when the author(user) wants to <a href="http://en.wikipedia.org/wiki/Archive">archive</a> a quote.
+
 ```shell
 # HTTP REQUEST BODY
 
@@ -631,6 +635,8 @@ quoteidlist | **minimum 1 quote id required** <br> list of quote ids to archive
 ## Copy quote
 
 This endpoint will set create a copy of the quote.
+
+This endpoint resembles a scenario when an author(user) wants to create a copy from an existing quote.
 
 > The request should return the following JSON
 
@@ -733,7 +739,9 @@ Include bearer token in header to authorize: `Authorization: Bearer token_value`
 
 ## Search quote
 
-This endpoint will search a quote with advanced filters (if applied)
+This endpoint will search a quote with advanced filters (if applied).
+
+This endpoint resembles a scenario when an author(client) wants to search for a quote with respect to advance search filters applied.
 
 ```shell
 # HTTP REQUEST BODY
@@ -855,6 +863,8 @@ isdescending | **optional** <i>- default is true </i> <br> sort the items in des
 
 This endpoint update the analytic meta data when a client views an attachment associated with a quote.
 
+This endpoint resembles a scenario when a recipient(client) will click on an attachment to view/download attached to lineitem/noteitem within the quote.
+
 ```shell
 # HTTP REQUEST BODY
 
@@ -891,7 +901,7 @@ duration | **optional** ***- integer*** <i>, in miliseconds </i> <br> duration o
 
 ## Quote (Action)	
 
-This endpoint will update the quote meta data as per the action taken on the quote either by the user and/or the client(recipient) of the quote.
+This endpoint will update the quote meta data as per the action taken on the quote either by the author(user) and/or the recipient(client) of the quote.
 
 ```shell
 # HTTP REQUEST BODY

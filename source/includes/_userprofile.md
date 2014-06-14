@@ -4,7 +4,7 @@
 
 This endpoint will get profile details of the user.
 
-This endpoint will simulate a scenario when the user request his/her personal profile details
+This endpoint resembles a scenario when the user request his/her personal profile details
 
 ```shell
 # HTTP REQUEST OBJECT
@@ -59,7 +59,7 @@ userid | **required** <br> id associated with an user
 
 This endpoint will update profile details of the user.
 
-This endpoint will simulate a scenario when a user would update profile details and save.
+This endpoint resembles a scenario when a user would update profile details and save.
 
 ```shell
 # HTTP REQUEST BODY
